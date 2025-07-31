@@ -10,7 +10,9 @@ services:
             capabilities: ["gpu"]
             count: all
     environment:
-      - OLLAMA_DEBUG=1
+      OLLAMA_DEBUG: 0
+      OLLAMA_FLASH_ATTENTION: 1
+      #OLLAMA_KV_CACHE_TYPE: q8_0
     volumes:
       - ollama:/root/.ollama
     ports:
